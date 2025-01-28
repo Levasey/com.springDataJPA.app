@@ -50,6 +50,9 @@ public class Person {
     @OneToMany(mappedBy = "owner")
     private List<Item> items;
 
+    @Enumerated(EnumType.STRING)
+    private Mood mood;
+
     public Person() {}
 
     public Person(String name, int age, String email, String address) {
@@ -110,6 +113,14 @@ public class Person {
     }
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public Mood getMood() {
+        return mood;
+    }
+
+    public void setMood(Mood mood) {
+        this.mood = mood;
     }
 
     @Override

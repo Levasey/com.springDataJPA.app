@@ -1,5 +1,6 @@
 package com.springDataJPA.app.services;
 
+import com.springDataJPA.app.models.Mood;
 import com.springDataJPA.app.models.Person;
 import com.springDataJPA.app.repositories.PeopleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,7 @@ public class PeopleService {
     @Transactional
     public Person save(Person person) {
         person.setCreatedAt(new Date());
+        person.setMood(Mood.CALM);
         return peopleRepository.save(person);
     }
 
